@@ -1,0 +1,11 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+spring:
+  application:
+    name: web
+  rabbitmq:
+    username: public
+    password: public@puhui
+    addresses: 10.10.108.142:5672,10.10.41.74:5672,10.10.51.10:5672
