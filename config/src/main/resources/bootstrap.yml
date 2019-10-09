@@ -13,9 +13,7 @@ spring:
     config:
       server:
         git:
-          uri: file:/Users/finup/personal/spring/git
-          username: yanjingfeng@finupgroup.com
-          password: Finup2018&
+          uri: file:/Users/finup/personal/git
 management:
   endpoints:
     web:

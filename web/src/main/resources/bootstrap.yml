@@ -12,6 +12,10 @@ spring:
   cloud:
     config:
       uri: http://localhost:8888
+  redis:
+    cluster:
+      nodes: 10.10.168.231:7000,10.10.168.231:7001,10.10.168.231:7002,10.10.168.231:7003,10.10.168.231:7004,10.10.168.231:7005
+    password: redis@puhui
 management:
   endpoints:
     web:
