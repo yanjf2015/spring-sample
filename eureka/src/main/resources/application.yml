@@ -7,3 +7,7 @@ eureka:
     fetchRegistry: true
   server:
     waitTimeInMsWhenSyncEmpty: 0
+logging:
+  level:
+    com.netflix.eureka: OFF
+    com.netflix.discovery: OFF
