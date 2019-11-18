@@ -1,0 +1,30 @@
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+spring:
+  application:
+    name: zuul
+  rabbitmq:
+    username: public
+    password: public@puhui
+    addresses: 10.10.108.142:5672,10.10.41.74:5672,10.10.51.10:5672
+  cloud:
+    config:
+      uri: http://localhost:8888
+  redis:
+    cluster:
+      nodes: 10.10.168.231:7000,10.10.168.231:7001,10.10.168.231:7002,10.10.168.231:7003,10.10.168.231:7004,10.10.168.231:7005
+    password: redis@puhui
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
