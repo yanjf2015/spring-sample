@@ -1,4 +1,4 @@
-package com.study.server.spel.examples;
+package com.study.server.spel;
 
 import com.study.server.spel.inventor.Inventor;
 import com.study.server.spel.inventor.PlaceOfBirth;
@@ -16,7 +16,10 @@ import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Map;
 
-public class Reference {
+/**
+ * @author jingfeng.yan
+ */
+public class ExpressionReference {
 
     public static void main(String[] args) {
         SpelParserConfiguration configuration = new SpelParserConfiguration(SpelCompilerMode.OFF, null,
