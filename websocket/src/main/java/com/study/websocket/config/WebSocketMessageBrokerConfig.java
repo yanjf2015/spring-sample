@@ -18,8 +18,11 @@ public class WebSocketMessageBrokerConfig implements WebSocketMessageBrokerConfi
 
 	@Override
 	public void configureMessageBroker(MessageBrokerRegistry config) {
-		config.enableSimpleBroker("/topic").setTaskScheduler(taskScheduler()).setHeartbeatValue(new long[]{1L, 1L});
+		config.enableSimpleBroker("/topic")
+                .setTaskScheduler(taskScheduler()).setHeartbeatValue(new long[]{1L, 1L});
 		config.setApplicationDestinationPrefixes("/app");
+		// 消息顺序
+        config.setPreservePublishOrder(true);
 	}
 
 	@Override

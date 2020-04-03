@@ -3,6 +3,8 @@ package com.study.websocket.handler;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.study.websocket.bean.Greeting;
 import com.study.websocket.message.HelloMessage;
+import org.springframework.web.socket.PingMessage;
+import org.springframework.web.socket.PongMessage;
 import org.springframework.web.socket.TextMessage;
 import org.springframework.web.socket.WebSocketSession;
 import org.springframework.web.socket.handler.TextWebSocketHandler;
@@ -22,5 +24,13 @@ public class HelloMessageHandler extends TextWebSocketHandler {
                 + helloMessage.getName() + "!")));
         session.sendMessage(webSocketMessage);
         super.handleTextMessage(session, message);
+    }
+
+    @Override
+    protected void handlePongMessage(WebSocketSession session, PongMessage message) throws Exception {
+        System.out.println(new String(message.getPayload().array()));
+        PingMessage pingMessage = new PingMessage();
+        session.sendMessage(pingMessage);
+        super.handlePongMessage(session, message);
     }
 }
